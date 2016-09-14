@@ -1,0 +1,97 @@
+extends layout
+block content
+        - for (var y = 0; y < arr.length; y++)
+            - for (var x = 0; x < arr[y].length; x++)
+                if (arr[y][x] != '#')
+                    - var initial = false
+                    - var specialClass = ''
+                    - var north = '#'
+                    - var east = '#'
+                    - var south = '#'
+                    - var west = '#'
+                    
+                    if (y > 0)
+                        - north = arr[y - 1][x]
+                    if (y < arr.length - 1)
+                        - south = arr[y + 1][x]
+                    if (x > 0)
+                        - west = arr[y][x - 1]
+                    if (x < arr[y].length - 1)
+                        - east = arr[y][x + 1]
+                        
+
+                    if (north.indexOf('#') == -1)
+                        if (north == '.')
+                            - initial = true
+                        - specialClass = ' ' +  north
+                        input(type='radio', id='rn' + x + '' + y, name='rooms', checked=initial, class='r' + (y - 1) + '' + x + ' n' +  specialClass)
+
+                    if (south.indexOf('#') == -1)  
+                        if (south == '.')
+                            - initial = true
+                        - specialClass = ' ' + south
+                        input(type='radio', id='rs' + x + '' + y, name='rooms', checked=initial, class='r' + (y + 1) + '' + x + ' s' + specialClass)
+
+                    if (west.indexOf('#') == -1)        
+                        if (west == '.')
+                            - initial = true
+                        - specialClass = ' ' + west
+                        input(type='radio', id='rw' + x + '' + y, name='rooms', checked=initial, class='r' + y + '' + (x - 1) + ' w' + specialClass)
+
+                    if (east.indexOf('#') == -1)         
+                        if (east == '.')
+                            - initial = true
+                        - specialClass = ' ' + east
+                        input(type='radio', id='re' + x + '' + y, name='rooms', checked=initial, class='r' + y + '' + (x + 1) + ' e' + specialClass)
+        .labels
+            - for (var y = 0; y < arr.length; y++)
+                - for (var x = 0; x < arr[y].length; x++)
+                    if (arr[y][x] != '#')
+                        .compass(id="d" + y + '' + x)
+                            if (y > 0 && arr[y - 1][x].indexOf('#') == -1)                    
+                                label(for='rn' + x + '' + y, class='n') 
+
+                            if (y < arr.length - 1 && arr[y + 1][x].indexOf('#') == -1)                    
+                                label(for='rs' + x + '' + y, class='s')
+
+                            if (x > 0 && arr[y][x - 1].indexOf('#') == -1)                    
+                                label(for='rw' + x + '' + y, class='w')
+
+                            if (x < arr[y].length - 1 && arr[y][x + 1].indexOf('#') == -1)                    
+                                label(for='re' + x + '' + y, class='e')
+        main
+            input#yKey(type='checkbox')
+            label#yLabel(for='yKey')
+            input#rKey(type='checkbox')
+            label#rLabel(for='rKey')
+            input#bKey(type='checkbox')
+            label#bLabel(for='bKey')
+            #start Level #{level}
+                br
+                |Collect all the orbs
+            #yCollected Yellow Orb Collected
+            #bCollected Blue Orb Collected
+            #rCollected Red Orb Collected
+            a#next(href='/' + (level + 1)) Next Level
+            - for (var y = 0; y < arr.length; y++)
+                - for (var x = 0; x < arr[y].length; x++)
+                   if (arr[y][x] != '#')
+                        - var classes = ''
+                        if (y > 0 && arr[y - 1][x].indexOf('#') == -1)                    
+                            - classes = classes + 'n '
+
+                        if (y < arr.length - 1 && arr[y + 1][x].indexOf('#') == -1)                    
+                           - classes = classes + 's '
+
+                        if (x > 0 && arr[y][x - 1].indexOf('#') == -1)                    
+                            - classes = classes + 'w '
+
+                        if (x < arr[y].length - 1 && arr[y][x + 1].indexOf('#') == -1)                    
+                            - classes = classes + 'e '
+                        .cube(id='c' + y + '' + x, class=classes.trim())
+                            .left
+                            .right
+                            .back
+                            .front
+                            .floor
+        aside Orbs Collected: 
