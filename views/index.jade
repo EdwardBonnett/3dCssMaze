@@ -49,16 +49,16 @@ block content
                     if (arr[y][x] != '#')
                         .compass(id="d" + y + '' + x)
                             if (y > 0 && arr[y - 1][x].indexOf('#') == -1)                    
-                                label(for='rn' + x + '' + y, class='n') 
+                                label(for='rn' + x + '' + y, class='n') North
 
                             if (y < arr.length - 1 && arr[y + 1][x].indexOf('#') == -1)                    
-                                label(for='rs' + x + '' + y, class='s')
+                                label(for='rs' + x + '' + y, class='s') South
 
                             if (x > 0 && arr[y][x - 1].indexOf('#') == -1)                    
-                                label(for='rw' + x + '' + y, class='w')
+                                label(for='rw' + x + '' + y, class='w') West
 
                             if (x < arr[y].length - 1 && arr[y][x + 1].indexOf('#') == -1)                    
-                                label(for='re' + x + '' + y, class='e')
+                                label(for='re' + x + '' + y, class='e') East
         main
             input#yKey(type='checkbox')
             label#yLabel(for='yKey')
