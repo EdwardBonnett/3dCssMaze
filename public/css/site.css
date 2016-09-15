@@ -25,7 +25,7 @@ main{-webkit-perspective:20vw;perspective:20vw;-webkit-perspective-origin:50% 50
 .cube .left{background:url(/images/bricks.jpg) #c2754f;background-size:90px 140px;-webkit-transform:rotateY(90deg) translateX(0);transform:rotateY(90deg) translateX(0);-webkit-transform-origin:center left;-ms-transform-origin:center left;transform-origin:center left}
 .cube .front{-webkit-transform:translateY(30vw);-ms-transform:translateY(30vw);transform:translateY(30vw);box-shadow:inset rgba(0,0,0,.47) 0 15vw 75vw 0;background:url(/images/bricks.jpg) #a55d39;background-size:90px 140px;opacity:.8}
 .cube.e .right,.cube.w .left{box-shadow:inset rgba(0,0,0,.47) 75vw 0 75vw 0}
-.compass,.compass label,.cube.n .back:after{position:absolute;background:gray}
+.compass,.compass label,.cube.n .back:after{background:gray;position:absolute}
 .cube.n .back:after{content:'';display:block;width:100vw;height:100vw;left:0;top:20%}
 .compass,.cube.s .front,input{display:none}
 .cube.e .back{width:200vw}
@@ -35,8 +35,8 @@ main{-webkit-perspective:20vw;perspective:20vw;-webkit-perspective-origin:50% 50
 .cube.w .back:after{left:100vw}
 .cube.w .left{-webkit-transform:rotateY(90deg) translateX(-60vw);transform:rotateY(90deg) translateX(-60vw)}
 .compass{height:10vw;width:10vw;border-radius:10vw;z-index:1;box-shadow:inset rgba(0,0,0,.5) 0 0 2vw}
-.compass label{height:2.5vw;width:2.5vw;z-index:9999;display:block;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:inset #c7c5c5 1vw 1vw 0}
-#bCollected,#next,#rCollected,#start,#yCollected,aside{position:absolute;background:rgba(0,0,0,.5);color:#fff;font-family:sans-serif}
+.compass label{height:2.5vw;width:2.5vw;z-index:9999;display:block;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:inset #c7c5c5 1vw 1vw 0;color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+#complete,aside{color:#fff;font-family:sans-serif}
 .compass label:hover{cursor:pointer;box-shadow:inset #e0dfdf 1vw 1vw 0}
 .compass label.n{left:3.5vw;top:1vw}
 .compass label.s{left:3.5vw;bottom:1vw;-webkit-transform:rotate(225deg);-ms-transform:rotate(225deg);transform:rotate(225deg)}
@@ -50,15 +50,15 @@ main{-webkit-perspective:20vw;perspective:20vw;-webkit-perspective-origin:50% 50
 .compass label.e{right:2vw;top:7vw}
 .compass label.w{left:2vw;top:7vw}
 }
-#complete{background:#333;color:#fff;font-family:sans-serif;padding:20px;height:100vh}
+#complete{background:#333;padding:20px;height:100vh}
 .r00:checked,.r010:checked,.r011:checked,.r012:checked,.r013:checked,.r014:checked,.r015:checked,.r01:checked,.r02:checked,.r03:checked,.r04:checked,.r05:checked,.r06:checked,.r07:checked,.r08:checked,.r09:checked,.r100:checked,.r1010:checked,.r1011:checked,.r1012:checked,.r1013:checked,.r1014:checked,.r1015:checked,.r101:checked,.r102:checked,.r103:checked,.r104:checked,.r105:checked,.r106:checked,.r107:checked,.r108:checked,.r109:checked,.r10:checked,.r110:checked,.r1110:checked,.r1111:checked,.r1112:checked,.r1113:checked,.r1114:checked,.r1115:checked,.r111:checked,.r112:checked,.r113:checked,.r114:checked,.r115:checked,.r116:checked,.r117:checked,.r118:checked,.r119:checked,.r11:checked,.r120:checked,.r1210:checked,.r1211:checked,.r1212:checked,.r1213:checked,.r1214:checked,.r1215:checked,.r121:checked,.r122:checked,.r123:checked,.r124:checked,.r125:checked,.r126:checked,.r127:checked,.r128:checked,.r129:checked,.r12:checked,.r130:checked,.r1310:checked,.r1311:checked,.r1312:checked,.r1313:checked,.r1314:checked,.r1315:checked,.r131:checked,.r132:checked,.r133:checked,.r134:checked,.r135:checked,.r136:checked,.r137:checked,.r138:checked,.r139:checked,.r13:checked,.r140:checked,.r1410:checked,.r1411:checked,.r1412:checked,.r1413:checked,.r1414:checked,.r1415:checked,.r141:checked,.r142:checked,.r143:checked,.r144:checked,.r145:checked,.r146:checked,.r147:checked,.r148:checked,.r149:checked,.r14:checked,.r150:checked,.r1510:checked,.r1511:checked,.r1512:checked,.r1513:checked,.r1514:checked,.r1515:checked,.r151:checked,.r152:checked,.r153:checked,.r154:checked,.r155:checked,.r156:checked,.r157:checked,.r158:checked,.r159:checked,.r15:checked,.r16:checked,.r17:checked,.r18:checked,.r19:checked,.r20:checked,.r210:checked,.r211:checked,.r212:checked,.r213:checked,.r214:checked,.r215:checked,.r21:checked,.r22:checked,.r23:checked,.r24:checked,.r25:checked,.r26:checked,.r27:checked,.r28:checked,.r29:checked,.r30:checked,.r310:checked,.r311:checked,.r312:checked,.r313:checked,.r314:checked,.r315:checked,.r31:checked,.r32:checked,.r33:checked,.r34:checked,.r35:checked,.r36:checked,.r37:checked,.r38:checked,.r39:checked,.r40:checked,.r410:checked,.r411:checked,.r412:checked,.r413:checked,.r414:checked,.r415:checked,.r41:checked,.r42:checked,.r43:checked,.r44:checked,.r45:checked,.r46:checked,.r47:checked,.r48:checked,.r49:checked,.r50:checked,.r510:checked,.r511:checked,.r512:checked,.r513:checked,.r514:checked,.r515:checked,.r51:checked,.r52:checked,.r53:checked,.r54:checked,.r55:checked,.r56:checked,.r57:checked,.r58:checked,.r59:checked,.r60:checked,.r610:checked,.r611:checked,.r612:checked,.r613:checked,.r614:checked,.r615:checked,.r61:checked,.r62:checked,.r63:checked,.r64:checked,.r65:checked,.r66:checked,.r67:checked,.r68:checked,.r69:checked,.r70:checked,.r710:checked,.r711:checked,.r712:checked,.r713:checked,.r714:checked,.r715:checked,.r71:checked,.r72:checked,.r73:checked,.r74:checked,.r75:checked,.r76:checked,.r77:checked,.r78:checked,.r79:checked,.r80:checked,.r810:checked,.r811:checked,.r812:checked,.r813:checked,.r814:checked,.r815:checked,.r81:checked,.r83:checked,.r84:checked,.r85:checked,.r86:checked,.r87:checked,.r88:checked,.r89:checked,.r90:checked,.r910:checked,.r911:checked,.r912:checked,.r913:checked,.r914:checked,.r915:checked,.r91:checked,.r92:checked,.r93:checked,.r94:checked,.r95:checked,.r96:checked,.r97:checked,.r98:checked,.r99:checked{height:10px;width:10px}
 #complete h1{margin-bottom:40px}
 .b:checked~main #bLabel,.r:checked~main #rLabel,.y:checked~main #yLabel{display:block}
-aside{right:0;top:10vh;padding:2vw;font-size:2vw}
+aside{background:rgba(0,0,0,.5);position:absolute;right:0;top:10vh;padding:2vw;font-size:2vw}
 @media (max-width:600px){aside{font-size:4vw}
 }
 aside::after{content:counter(sum) "/3";display:inline-block}
-#bCollected,#next,#rCollected,#start,#yCollected{opacity:0;-webkit-animation:none;animation:none;z-index:2;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);margin-top:25vh;font-size:4vw;padding:3vw;pointer-events:none}
+#bCollected,#next,#rCollected,#start,#yCollected{opacity:0;-webkit-animation:none;animation:none;position:absolute;background:rgba(0,0,0,.5);z-index:2;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);margin-top:25vh;color:#fff;font-family:sans-serif;font-size:4vw;padding:3vw;pointer-events:none}
 #start{-webkit-animation:popUp1 4s;animation:popUp1 4s}
 #yKey:checked~#rKey:checked~#bKey:checked~#next{display:block;-webkit-animation:nextLevel 3s 3s;animation:nextLevel 3s 3s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}
 #next{display:none;opacity:0;pointer-events:all;text-decoration:none}
