@@ -1,5 +1,6 @@
 extends layout
 block content
+        p North access key is N, South access key is S, East access key is X, West access key is W, Pick up orb is O
         - for (var y = 0; y < arr.length; y++)
             - for (var x = 0; x < arr[y].length; x++)
                 if (arr[y][x] != '#')
@@ -47,25 +48,25 @@ block content
             - for (var y = 0; y < arr.length; y++)
                 - for (var x = 0; x < arr[y].length; x++)
                     if (arr[y][x] != '#')
-                        .compass(id="d" + y + '' + x)
+                        .compass(id="d" + y + '' + x, tableindex="0")
                             if (y > 0 && arr[y - 1][x].indexOf('#') == -1)                    
-                                label(for='rn' + x + '' + y, class='n') North
+                                label(for='rn' + x + '' + y, class='n', tabindex="1") North
 
                             if (y < arr.length - 1 && arr[y + 1][x].indexOf('#') == -1)                    
-                                label(for='rs' + x + '' + y, class='s') South
+                                label(for='rs' + x + '' + y, class='s', tabindex="2") South
 
                             if (x > 0 && arr[y][x - 1].indexOf('#') == -1)                    
-                                label(for='rw' + x + '' + y, class='w') West
+                                label(for='rw' + x + '' + y, class='w', tabindex="3") West
 
                             if (x < arr[y].length - 1 && arr[y][x + 1].indexOf('#') == -1)                    
-                                label(for='re' + x + '' + y, class='e') East
+                                label(for='re' + x + '' + y, class='e', tabindex="4") East
         main
             input#yKey(type='checkbox')
-            label#yLabel(for='yKey')
+            label#yLabel(for='yKey', tabindex="4") Yellow Orb
             input#rKey(type='checkbox')
-            label#rLabel(for='rKey')
+            label#rLabel(for='rKey', tabindex="4") Red Orb
             input#bKey(type='checkbox')
-            label#bLabel(for='bKey')
+            label#bLabel(for='bKey', tabindex="4") Blue Orb
             #start Level #{level}
                 br
                 |Collect all the orbs
