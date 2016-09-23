@@ -1,11 +1,11 @@
 #bKey,#rKey,#yKey,.controls{position:absolute}
-#bKey,#bKey:checked~#bLabel,#bLabel,#rKey,#rKey:checked~#rLabel,#rLabel,#yKey,#yKey:checked~#yLabel,#yLabel,.cube{display:none;visibility:hidden}
 #complete,main{text-align:center}
 *,:after,:before{margin:0;padding:0;box-sizing:border-box}
 body{background:gray;overflow:hidden;counter-reset:sum}
 main{-webkit-perspective:20vw;perspective:20vw;-webkit-perspective-origin:50% 50%;perspective-origin:50% 50%}
 p{display:none}
-#bKey,#rKey,#yKey{left:-100vw}
+#bKey,#rKey,#yKey{display:block;visibility:hidden;left:-100vw}
+#bKey:checked~#bLabel,#bLabel,#rKey:checked~#rLabel,#rLabel,#yKey:checked~#yLabel,#yLabel,.cube{display:none;visibility:hidden}
 #yKey:checked{counter-increment:sum 1}
 #yKey:checked~#yCollected{-webkit-animation:popUp1 4s;animation:popUp1 4s}
 #bKey:checked,#rKey:checked{counter-increment:sum}
